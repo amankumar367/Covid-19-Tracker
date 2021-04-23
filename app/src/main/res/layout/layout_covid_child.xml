@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:bind="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="data"
+            type="com.covid.aman.data.model.CovidDataView" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clItem"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:ignore="UnusedAttribute">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/glVertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintGuide_percent=".35"
+            android:orientation="vertical"
+            />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvHeadline"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingVertical="10dp"
+            android:text="@{data.districtName}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:paddingHorizontal="24dp"
+            tools:text="Andhra Perdesh" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvActive"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingVertical="4dp"
+            android:text="@string/active"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvHeadline"
+            android:paddingHorizontal="40dp" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvActiveValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingVertical="4dp"
+            android:text="@{data.districtData.active.toString()}"
+            app:layout_constraintStart_toEndOf="@+id/glVertical"
+            app:layout_constraintTop_toTopOf="@+id/tvActive"
+            app:layout_constraintBottom_toBottomOf="@+id/tvActive"
+            tools:text="200" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvConfirm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingVertical="4dp"
+            android:text="@string/confirm"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvActive"
+            android:paddingHorizontal="40dp" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvConfirmValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingVertical="4dp"
+            android:text="@{data.districtData.confirmed.toString()}"
+            app:layout_constraintStart_toEndOf="@+id/glVertical"
+            app:layout_constraintTop_toTopOf="@+id/tvConfirm"
+            app:layout_constraintBottom_toBottomOf="@+id/tvConfirm"
+            tools:text="200" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvDeceased"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingVertical="4dp"
+            android:text="@string/deceased"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvConfirm"
+            android:paddingHorizontal="40dp" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvDeceasedValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingVertical="4dp"
+            android:text="@{data.districtData.deceased.toString()}"
+            app:layout_constraintStart_toEndOf="@+id/glVertical"
+            app:layout_constraintTop_toTopOf="@+id/tvDeceased"
+            app:layout_constraintBottom_toBottomOf="@+id/tvDeceased"
+            tools:text="200" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/Recovered"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingVertical="4dp"
+            android:text="@string/recovered"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvDeceased"
+            android:paddingHorizontal="40dp" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/RecoveredValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingVertical="4dp"
+            android:text="@{data.districtData.recovered.toString()}"
+            app:layout_constraintStart_toEndOf="@+id/glVertical"
+            app:layout_constraintTop_toTopOf="@+id/Recovered"
+            app:layout_constraintBottom_toBottomOf="@+id/Recovered"
+            tools:text="200" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
