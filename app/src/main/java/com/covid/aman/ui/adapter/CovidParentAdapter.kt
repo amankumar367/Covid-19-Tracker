@@ -5,12 +5,12 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.covid.aman.R
-import com.covid.aman.data.model.CovidDataList
-import com.covid.aman.data.model.CovidDataView
+import com.covid.aman.data.model.DistrictData
+import com.covid.aman.data.model.StateData
 import com.covid.aman.databinding.LayoutCovidParentBinding
 
 class CovidParentAdapter(
-    private val list: List<CovidDataList>
+    private val list: List<StateData>
 ) : RecyclerView.Adapter<CovidParentAdapter.CovidParentViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CovidParentViewHolder {
@@ -36,9 +36,10 @@ class CovidParentAdapter(
 
         private var adapter: CovidChildAdapter? = null
 
-        fun bind(list: CovidDataList) {
-            viewBinding.data = list
-            adapter = CovidChildAdapter(list.covidDataView ?: mutableListOf<CovidDataView>())
+        fun bind(data: StateData) {
+            viewBinding.data = data
+            adapter = CovidChildAdapter(data.districtData ?: mutableListOf())
+            viewBinding.rvCovidChild.adapter = adapter
         }
     }
 }

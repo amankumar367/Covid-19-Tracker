@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Covid-19</string>
+    <string name="app_name">Covid-19 Tracker</string>
     <string name="active">Active:</string>
     <string name="confirm">Confirm:</string>
     <string name="deceased">Deceased:</string>

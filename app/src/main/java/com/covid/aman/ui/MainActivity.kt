@@ -5,7 +5,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.covid.aman.R
-import com.covid.aman.data.model.CovidDataList
+import com.covid.aman.data.model.StateData
 import com.covid.aman.data.repository.CovidRepository
 import com.covid.aman.databinding.ActivityMainBinding
 import com.covid.aman.helper.extensions.createFactory
@@ -29,6 +29,7 @@ class MainActivity : DaggerAppCompatActivity() {
 
         init()
         setObserver()
+        getCovidCases()
     }
 
     private fun init() {
@@ -39,9 +40,6 @@ class MainActivity : DaggerAppCompatActivity() {
     private fun setObserver() {
         viewModel.stateObservable.observe( this, Observer {
             when (it) {
-                is MainState.Init -> {
-                    viewModel.getCovidCases()
-                }
                 MainState.Loading -> {
                     viewBinding.showProgress = true
                 }
@@ -58,7 +56,11 @@ class MainActivity : DaggerAppCompatActivity() {
         })
     }
 
-    private fun setAdapter(data: List<CovidDataList>) {
+    private fun getCovidCases() {
+        viewModel.getCovidCases()
+    }
+
+    private fun setAdapter(data: List<StateData>) {
         viewBinding.rvCovid.adapter = CovidParentAdapter(data)
     }
 

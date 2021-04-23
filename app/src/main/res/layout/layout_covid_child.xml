@@ -7,7 +7,7 @@
     <data>
         <variable
             name="data"
-            type="com.covid.aman.data.model.CovidDataView" />
+            type="com.covid.aman.data.model.DistrictData" />
 
     </data>
 
@@ -30,7 +30,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingVertical="10dp"
-            android:text="@{data.districtName}"
+            android:text="@{data.district}"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -52,7 +52,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingVertical="4dp"
-            android:text="@{data.districtData.active.toString()}"
+            android:text="@{data.active.toString()}"
             app:layout_constraintStart_toEndOf="@+id/glVertical"
             app:layout_constraintTop_toTopOf="@+id/tvActive"
             app:layout_constraintBottom_toBottomOf="@+id/tvActive"
@@ -73,7 +73,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingVertical="4dp"
-            android:text="@{data.districtData.confirmed.toString()}"
+            android:text="@{data.confirmed.toString()}"
             app:layout_constraintStart_toEndOf="@+id/glVertical"
             app:layout_constraintTop_toTopOf="@+id/tvConfirm"
             app:layout_constraintBottom_toBottomOf="@+id/tvConfirm"
@@ -94,7 +94,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingVertical="4dp"
-            android:text="@{data.districtData.deceased.toString()}"
+            android:text="@{data.deceased.toString()}"
             app:layout_constraintStart_toEndOf="@+id/glVertical"
             app:layout_constraintTop_toTopOf="@+id/tvDeceased"
             app:layout_constraintBottom_toBottomOf="@+id/tvDeceased"
@@ -115,7 +115,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingVertical="4dp"
-            android:text="@{data.districtData.recovered.toString()}"
+            android:text="@{data.recovered.toString()}"
             app:layout_constraintStart_toEndOf="@+id/glVertical"
             app:layout_constraintTop_toTopOf="@+id/Recovered"
             app:layout_constraintBottom_toBottomOf="@+id/Recovered"

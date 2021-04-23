@@ -8,7 +8,7 @@
 
         <variable
             name="data"
-            type="com.covid.aman.data.model.CovidDataList" />
+            type="com.covid.aman.data.model.StateData" />
 
     </data>
 
@@ -22,7 +22,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center_vertical"
-            android:text="@{data.stateName}"
+            android:text="@{data.state}"
             android:textColor="@color/black"
             android:paddingHorizontal="12dp"
             android:paddingVertical="12dp"
@@ -34,7 +34,7 @@
             tools:text="General" />
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rvArticles"
+            android:id="@+id/rvCovidChild"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"

@@ -1,8 +1,8 @@
 package com.covid.aman
 
-import com.news.app.di.DaggerAppComponent
+import com.covid.aman.di.DaggerAppComponent
 import dagger.android.AndroidInjector
-import dagger.android.DaggerApplication
+import dagger.android.support.DaggerApplication
 
 class CovidApplication: DaggerApplication() {
 
